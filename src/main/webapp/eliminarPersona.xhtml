@@ -48,7 +48,19 @@
 						disabled="#{eliminaPersonaBean.persona == null}"
 						action="#{eliminaPersonaBean.eliminarPersona(id)}">
 						<f:param name="datos" value="true" />
+						<p:confirm header="Confirmación"
+							message="Desea eliminar la persona?" />
+
 					</p:commandButton>
+
+                   <p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
+						responsive="true" width="350">
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no ui-button-flat" />
+						<p:commandButton value="Si" type="button"
+							styleClass="ui-confirmdialog-yes" />
+					</p:confirmDialog>
+
 					<p:spacer width="20" />
 					<p:commandButton value="Volver" immediate="true"
 						styleClass="classBlock" action="#{eliminaPersonaBean.volver}" />
