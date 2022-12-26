@@ -1,0 +1,6 @@
+/* Estilos Personalizados*/
+.ui-inputfield.ui-state-error, .ui-widget-header .ui-inputfield.ui-state-error,
+	.ui-widget-content .ui-inputfield.ui-state-error {
+	color: #333333;
+	border: 1px solid #f5546c;
+}
