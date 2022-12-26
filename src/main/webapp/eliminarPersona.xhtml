@@ -31,14 +31,29 @@
 				rendered="#{eliminaPersonaBean.persona != null}">
 				<h:panelGrid columns="2" cellpadding="4"
 					style="margin-left: auto; margin-right: auto;">
-					<p:outputLabel value="Nombre: " indicateRequired="true" />
+					<p:outputLabel value="Nombre: "  />
 					<p:inputText id="nombre"
-						value="#{eliminaPersonaBean.persona.nombre}"
-						required="#{not empty param.datos}" />
+						value="#{eliminaPersonaBean.persona.nombre}" readonly="true"/>
 
-					<p:outputLabel value="Apellido: " indicateRequired="true" />
-					<p:inputText id="apellido" required="#{not empty param.datos}"
-						value="#{eliminaPersonaBean.persona.apellido}" />
+					<p:outputLabel value="Apellido: "  />
+					<p:inputText id="apellido" 
+						value="#{eliminaPersonaBean.persona.apellido}" readonly="true" />
+						
+					<p:outputLabel value="Fecha Nacimiento: "  />
+					<p:inputText id="fechaNacimiento" 
+						value="#{eliminaPersonaBean.persona.fechaNacimiento}" readonly="true" />
+					
+					<p:outputLabel value="Dni: "  />
+					<p:inputText id="dni" 
+						value="#{eliminaPersonaBean.persona.dni}" readonly="true" />
+						
+					<p:outputLabel value="Sexo: "  />
+					<p:inputText id="sexo" 
+						value="#{eliminaPersonaBean.persona.sexo}" readonly="true" />
+					
+					<p:outputLabel value="Domicilio: "  />
+					<p:inputText id="domicilio" 
+						value="#{eliminaPersonaBean.persona.domicilio}" readonly="true" />
 				</h:panelGrid>
 			</p:panel>
 			<p:toolbar>
