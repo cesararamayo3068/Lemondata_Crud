@@ -14,14 +14,14 @@ import ar.com.lemondata.ejercicio.entity.Persona;
 import ar.com.lemondata.ejercicio.servicioImpl.ServicioPersonaImpl;
 
 /**
- * @author Fernando
+ * @author Cesar
  *
  */
-@Named("modificaPersonaBean")
+@Named("eliminaPersonaBean")
 @ViewScoped
-public class ModificaPersonaBean extends GenericBean {
+public class EliminaPersonaBean extends GenericBean {
 
-	@Value("${modificaPersona}")
+	@Value("${eliminaPersona}")
 	private String titulo;
 
 	private Long idSeleccionado;
@@ -76,7 +76,7 @@ public class ModificaPersonaBean extends GenericBean {
 		}
 	}
 
-	public void modificarPersona() {
+	public void eliminarPersona() {
 		// TODO Guardar, refrescar combo, limpiar pantalla, mostrar mensaje de exito de
 		// modificacion
 		mostrarMensaje("Implementar");

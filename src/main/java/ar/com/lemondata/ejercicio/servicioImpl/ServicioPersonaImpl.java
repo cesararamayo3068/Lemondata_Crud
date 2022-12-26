@@ -41,7 +41,7 @@ public class ServicioPersonaImpl implements ServicioPersona {
 
 	@Override
 	public void eliminarPersona(Long id) {
-		// TODO Generar metodo de eliminar persona
+	    personaRepository.deleteById(id);
 	}
 
 }
