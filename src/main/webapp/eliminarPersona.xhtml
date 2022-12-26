@@ -46,7 +46,7 @@
 					<p:commandButton value="Eliminar" styleClass="classBlock"
 						update="panelEliminacion"
 						disabled="#{eliminaPersonaBean.persona == null}"
-						action="#{eliminaPersonaBean.eliminarPersona}">
+						action="#{eliminaPersonaBean.eliminarPersona(id)}">
 						<f:param name="datos" value="true" />
 					</p:commandButton>
 					<p:spacer width="20" />

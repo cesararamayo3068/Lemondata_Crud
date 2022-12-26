@@ -76,10 +76,14 @@ public class EliminaPersonaBean extends GenericBean {
 		}
 	}
 
-	public void eliminarPersona() {
+	public void eliminarPersona(Long id) {
 		// TODO Guardar, refrescar combo, limpiar pantalla, mostrar mensaje de exito de
-		// modificacion
-		mostrarMensaje("Implementar");
+		// eliminacion
+	 servicio.eliminarPersona(idSeleccionado);
+		mostrarMensaje("Se elimino la Persona: " + persona.getNombre() + " " + persona.getApellido() + " con el ID: "
+				+ persona.getId());
+		init();
+		
 	}
 
 }
