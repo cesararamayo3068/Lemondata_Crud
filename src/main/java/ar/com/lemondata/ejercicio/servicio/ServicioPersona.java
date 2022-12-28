@@ -13,7 +13,7 @@ public interface ServicioPersona {
 
 	public Persona guardarPersona(Persona persona);
 
-	public Persona buscarPersonaXNombre(String nombre);
+	public List<Persona> buscarPersonaXNombre(String nombre);
 
 	public Persona buscarPersonaXId(Long id);
 

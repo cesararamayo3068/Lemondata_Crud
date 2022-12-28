@@ -28,12 +28,12 @@ public class ServicioPersonaImpl implements ServicioPersona {
 		return personaRepository.saveAndFlush(persona);
 	}
 
-	
-	/*
-	 * public Persona buscarPersonaXNombre(String nombre) { //TODO Implementar
-	 * metodo que devuelva todas las personas por el nombre pasado por parametro
-	 * return personaRepository.findByName(nombre); }
-	 */
+	@Override
+	 public List<Persona> buscarPersonaXNombre(String nombre) {
+		//TODO Implementar metodo que devuelva todas las personas por el nombre pasado por parametro
+	 return personaRepository.findByName(nombre);
+
+	}
 
 	public Persona buscarPersonaXId(Long id) {
 		return personaRepository.findById(id).get();
@@ -55,11 +55,6 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	}
 
 
-	@Override
-	public Persona buscarPersonaXNombre(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 	 
