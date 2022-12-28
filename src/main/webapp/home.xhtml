@@ -30,8 +30,29 @@
 								<p:menuitem value="Eliminar Persona"
 									outcome="eliminarPersona" onclick="PF('blocker').show()"
 									oncomplete="PF('blocker').hide()" />
+								
 							</p:submenu>
+							
 						</p:menu>
+						<p:menu>
+							<p:submenu label="Vehiculos">
+							
+							<p:menuitem value="Agregar Vehiculo" outcome="altaVehiculo"
+									onclick="PF('blocker').show()"
+									oncomplete="PF('blocker').hide()" />
+								<p:menuitem value="Consulta de Vehiculo" outcome="consultasTabsVehiculos"
+									onclick="PF('blocker').show()"
+									oncomplete="PF('blocker').hide()" />
+								<p:menuitem value="Editar Vehiculo"
+									outcome="modificaVehiculo" onclick="PF('blocker').show()"
+									oncomplete="PF('blocker').hide()" />
+									
+								<p:menuitem value="Eliminar Vehiculo"
+									outcome="eliminarVehiculo" onclick="PF('blocker').show()"
+									oncomplete="PF('blocker').hide()" />
+							</p:submenu>
+							</p:menu>
+							
 					</h:panelGrid>
 				</p:layoutUnit>
 

@@ -21,15 +21,19 @@ public class ServicioPersonaImpl implements ServicioPersona {
 
 	@Autowired
 	private PersonaRepository personaRepository;
+	
+	
 
 	public Persona guardarPersona(Persona persona) {
 		return personaRepository.saveAndFlush(persona);
 	}
 
-	public List<Persona> buscarPersonaXNombre(String nombre) {
-		//TODO Implementar metodo que devuelva todas las personas por el nombre pasado por parametro
-		return null;
-	}
+	
+	/*
+	 * public Persona buscarPersonaXNombre(String nombre) { //TODO Implementar
+	 * metodo que devuelva todas las personas por el nombre pasado por parametro
+	 * return personaRepository.findByName(nombre); }
+	 */
 
 	public Persona buscarPersonaXId(Long id) {
 		return personaRepository.findById(id).get();
@@ -43,5 +47,23 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	public void eliminarPersona(Long id) {
 	    personaRepository.deleteById(id);
 	}
+	
+	public Persona modificarPersona(Persona persona , Long id) {
+		Persona personaActual = personaRepository.findById(id).get();
+		 personaActual.setApellido(persona.getApellido());
+		return personaRepository.save(personaActual);
+	}
+
+
+	@Override
+	public Persona buscarPersonaXNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	 
+	
+	
 
 }

@@ -18,10 +18,13 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
 	
 	public Optional<Persona> findById(Long id);
 	
+
 	public Persona saveAndFlush(Persona persona);
 	
 	public List<Persona> findAll();
 	
 	public List<DatosPersona> findAllProjectedBy();
+	
+	/* public Persona findByName(String nombre); */
 	
 }

@@ -75,5 +75,12 @@ public class ConsultaPersonaBean extends GenericBean {
 			setPersona(servicio.buscarPersonaXId(getIdSeleccionado()));
 		}
 	}
-
+	
+	/*
+	 * public void consultarPersonaPorNombre(String nombre) {
+	 * 
+	 * servicio.buscarPersonaXNombre(nombre);
+	 * 
+	 * }
+	 */
 }

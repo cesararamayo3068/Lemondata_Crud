@@ -13,12 +13,16 @@ public interface ServicioPersona {
 
 	public Persona guardarPersona(Persona persona);
 
-	public List<Persona> buscarPersonaXNombre(String nombre);
+	public Persona buscarPersonaXNombre(String nombre);
 
 	public Persona buscarPersonaXId(Long id);
 
 	public List<DatosPersona> obtenerDatosComboPersona();
 
 	public void eliminarPersona(Long id);
+	
+	public Persona modificarPersona(Persona persona ,Long id);
+
+	//void modificarPersona(Persona persona, Long id);
 
 }

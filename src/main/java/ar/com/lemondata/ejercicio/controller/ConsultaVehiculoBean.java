@@ -9,33 +9,36 @@ import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
-import ar.com.lemondata.ejercicio.entity.DatosPersona;
+
+import ar.com.lemondata.ejercicio.entity.DatosVehiculo;
 import ar.com.lemondata.ejercicio.entity.Persona;
+import ar.com.lemondata.ejercicio.entity.Vehiculo;
+import ar.com.lemondata.ejercicio.servicioImpl.ServiceVehiculoImpl;
 import ar.com.lemondata.ejercicio.servicioImpl.ServicioPersonaImpl;
 
 /**
- * @author Fernando
+ * @author Cesar
  *
  */
-@Named("modificaPersonaBean")
+@Named("consultaVehiculoBean")
 @ViewScoped
-public class ModificaPersonaBean extends GenericBean {
+public class ConsultaVehiculoBean extends GenericBean {
 
-	@Value("${modificaPersona}")
+	@Value("${consultaVehiculo}")
 	private String titulo;
 
 	private Long idSeleccionado;
-	private List<DatosPersona> datosCombo;
-	private Persona persona;
+	private List<DatosVehiculo> datosCombo;
+	private Vehiculo vehiculo;
 
 	@Autowired
-	private ServicioPersonaImpl servicio;
+	private ServiceVehiculoImpl servicio;
 
 	@PostConstruct
 	private void init() {
-		setDatosCombo(servicio.obtenerDatosComboPersona());
+		setDatosCombo(servicio.obtenerDatosComboVehiculo());
 		setIdSeleccionado(null);
-		setPersona(null);
+		setVehiculo(null);
 	}
 
 	public String getTitulo() {
@@ -54,37 +57,33 @@ public class ModificaPersonaBean extends GenericBean {
 		this.idSeleccionado = idSeleccionado;
 	}
 
-	public List<DatosPersona> getDatosCombo() {
+	public List<DatosVehiculo> getDatosCombo() {
 		return datosCombo;
 	}
 
-	public void setDatosCombo(List<DatosPersona> datosCombo) {
+	public void setDatosCombo(List<DatosVehiculo> datosCombo) {
 		this.datosCombo = datosCombo;
 	}
 
-	public Persona getPersona() {
-		return persona;
+	public Vehiculo getVehiculo() {
+		return vehiculo;
 	}
 
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
 	}
 
 	public void consultarPersona() {
 		if (idSeleccionado != null) {
-			setPersona(servicio.buscarPersonaXId(getIdSeleccionado()));
+			setVehiculo(servicio.buscarVehiculoPorId(getIdSeleccionado()));
 		}
 	}
-
-	public void modificarPersona() {
-		// TODO Guardar, refrescar combo, limpiar pantalla, mostrar mensaje de exito de
-		// modificacion
-		
-		//servicio.modificarPersona(Persona persona);
-		mostrarMensaje("Se modifico la Persona: " + persona.getNombre() + " " + persona.getApellido() + " con el ID: "
-				+ persona.getId());
-		init();
-		
-	}
-
+	
+	/*
+	 * public void consultarPersonaPorNombre(String nombre) {
+	 * 
+	 * servicio.buscarPersonaXNombre(nombre);
+	 * 
+	 * }
+	 */
 }

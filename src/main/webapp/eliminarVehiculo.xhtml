@@ -1,0 +1,87 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<p:panel id="panelEliminacion" header="#{eliminaPersonaBean.titulo}"
+			style="text-align: center;">
+			<h:panelGrid columns="3" cellpadding="4"
+				style="margin-left: auto; margin-right: auto;">
+				<p:outputLabel value="Persona: " indicateRequired="true" />
+				<p:selectOneMenu value="#{eliminaPersonaBean.idSeleccionado}"
+					required="#{not empty param.combo}">
+					<f:selectItem itemLabel="Seleccione" />
+					<f:selectItems value="#{eliminaPersonaBean.datosCombo}"
+						var="persona" itemLabel="#{persona.formatoCombo}"
+						itemValue="#{persona.id}" />
+					<p:ajax event="valueChange" update="panelEliminacion" />
+				</p:selectOneMenu>
+
+				<p:commandButton value="Buscar" styleClass="classBlock"
+					action="#{eliminaPersonaBean.consultarPersona}"
+					update="panelEliminacion">
+					<f:param name="combo" value="true" />
+				</p:commandButton>
+			</h:panelGrid>
+
+			<p:panel id="panelDatosPersona"
+				rendered="#{eliminaPersonaBean.persona != null}">
+				<h:panelGrid columns="2" cellpadding="4"
+					style="margin-left: auto; margin-right: auto;">
+					<p:outputLabel value="Nombre: "  />
+					<p:inputText id="nombre"
+						value="#{eliminaPersonaBean.persona.nombre}" readonly="true"/>
+
+					<p:outputLabel value="Apellido: "  />
+					<p:inputText id="apellido" 
+						value="#{eliminaPersonaBean.persona.apellido}" readonly="true" />
+						
+					<p:outputLabel value="Fecha Nacimiento: "  />
+					<p:inputText id="fechaNacimiento" 
+						value="#{eliminaPersonaBean.persona.fechaNacimiento}" readonly="true" />
+					
+					<p:outputLabel value="Dni: "  />
+					<p:inputText id="dni" 
+						value="#{eliminaPersonaBean.persona.dni}" readonly="true" />
+						
+					<p:outputLabel value="Sexo: "  />
+					<p:inputText id="sexo" 
+						value="#{eliminaPersonaBean.persona.sexo}" readonly="true" />
+					
+					<p:outputLabel value="Domicilio: "  />
+					<p:inputText id="domicilio" 
+						value="#{eliminaPersonaBean.persona.domicilio}" readonly="true" />
+				</h:panelGrid>
+			</p:panel>
+			<p:toolbar>
+				<p:toolbarGroup align="right">
+					<p:commandButton value="Eliminar" styleClass="classBlock"
+						update="panelEliminacion"
+						disabled="#{eliminaPersonaBean.persona == null}"
+						action="#{eliminaPersonaBean.eliminarPersona(id)}">
+						<f:param name="datos" value="true" />
+						<p:confirm header="Confirmación"
+							message="Desea eliminar la persona?" />
+
+					</p:commandButton>
+
+                   <p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
+						responsive="true" width="350">
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no ui-button-flat" />
+						<p:commandButton value="Si" type="button"
+							styleClass="ui-confirmdialog-yes" />
+					</p:confirmDialog>
+
+					<p:spacer width="20" />
+					<p:commandButton value="Volver" immediate="true"
+						styleClass="classBlock" action="#{eliminaPersonaBean.volver}" />
+				</p:toolbarGroup>
+			</p:toolbar>
+		</p:panel>
+
+	</ui:define>
+</ui:composition>
