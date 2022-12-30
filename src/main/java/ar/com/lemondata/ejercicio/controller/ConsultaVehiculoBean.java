@@ -79,11 +79,5 @@ public class ConsultaVehiculoBean extends GenericBean {
 		}
 	}
 	
-	/*
-	 * public void consultarPersonaPorNombre(String nombre) {
-	 * 
-	 * servicio.buscarPersonaXNombre(nombre);
-	 * 
-	 * }
-	 */
+	
 }

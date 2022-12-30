@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import ar.com.lemondata.ejercicio.entity.DatosPersona;
 import ar.com.lemondata.ejercicio.entity.Persona;
+import ar.com.lemondata.ejercicio.repository.PersonaRepository;
 import ar.com.lemondata.ejercicio.servicioImpl.ServicioPersonaImpl;
 
 /**
@@ -30,6 +31,9 @@ public class ConsultaPersonaBean extends GenericBean {
 
 	@Autowired
 	private ServicioPersonaImpl servicio;
+	
+	@Autowired 
+	private PersonaRepository personaRepository;
 
 	@PostConstruct
 	private void init() {
@@ -84,5 +88,9 @@ public class ConsultaPersonaBean extends GenericBean {
 
 		return servicio.buscarPersonaXNombre("nombre");
 	 }
-
+   
+	public List<Persona> listarPersonas(){
+		return personaRepository.findAll();
+		
+	}
 }

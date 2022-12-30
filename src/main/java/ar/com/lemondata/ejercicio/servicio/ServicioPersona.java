@@ -21,8 +21,8 @@ public interface ServicioPersona {
 
 	public void eliminarPersona(Long id);
 	
-	public Persona modificarPersona(Persona persona ,Long id);
+	public  Persona modificarPersona(Persona persona ,Long id );
 
-	//void modificarPersona(Persona persona, Long id);
+	
 
 }

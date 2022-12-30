@@ -22,24 +22,31 @@
 			rendered="#{consultaPersonaBean.persona != null}">
 			<h:panelGrid columns="2" cellpadding="4"
 				style="margin-left: auto; margin-right: auto;">
+
 				<p:outputLabel value="Nombre: " />
-				<p:inputText id="nombre" readonly="true" value="#{consultaPersonaBean.persona.nombre}" />
+				<p:inputText id="nombre" readonly="true"
+					value="#{consultaPersonaBean.persona.nombre}" />
 
 				<p:outputLabel value="Apellido: " />
-				<p:inputText id="apellido" readonly="true" value="#{consultaPersonaBean.persona.apellido}" />
-			
-			    <p:outputLabel value="Fecha Nacimiento: " />
-				<p:inputText id="fechaNacimiento" readonly="true" value="#{consultaPersonaBean.persona.fechaNacimiento}" />
-			    
-			    <p:outputLabel value="Dni: " />
-				<p:inputText id="dni" readonly="true" value="#{consultaPersonaBean.persona.dni}" />
-				
+				<p:inputText id="apellido" readonly="true"
+					value="#{consultaPersonaBean.persona.apellido}" />
+
+				<p:outputLabel value="Fecha Nacimiento: " />
+				<p:inputText id="fechaNacimiento" readonly="true"
+					value="#{consultaPersonaBean.persona.fechaNacimiento}" />
+
+				<p:outputLabel value="Dni: " />
+				<p:inputText id="dni" readonly="true"
+					value="#{consultaPersonaBean.persona.dni}" />
+
 				<p:outputLabel value="Sexo: " />
-				<p:inputText id="sexo" readonly="true" value="#{consultaPersonaBean.persona.sexo}" />
-			    
-			    <p:outputLabel value="Domicilio: " />
-				<p:inputText id="domicilio" readonly="true" value="#{consultaPersonaBean.persona.domicilio}" />
-			
+				<p:inputText id="sexo" readonly="true"
+					value="#{consultaPersonaBean.persona.sexo}" />
+
+				<p:outputLabel value="Domicilio: " />
+				<p:inputText id="domicilio" readonly="true"
+					value="#{consultaPersonaBean.persona.domicilio}" />
+
 			</h:panelGrid>
 		</p:panel>
 

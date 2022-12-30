@@ -6,11 +6,11 @@
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="content">
 
-		<p:panel id="panelDatosAltaVehiculo" header="#{altaVehiculoBean.titulo}"
-			style="text-align: center;">
+		<p:panel id="panelDatosAltaVehiculo"
+			header="#{altaVehiculoBean.titulo}" style="text-align: center;">
 			<h:panelGrid columns="2" cellpadding="4"
 				style="margin-left: auto; margin-right: auto;">
-				
+
 				<p:outputLabel value="Marca: " indicateRequired="true" />
 				<p:inputText id="marca" value="#{altaVehiculoBean.vehiculo.marca}"
 					required="true" />
@@ -23,7 +23,7 @@
 				<p:inputNumber id="anio" required="true"
 					value="#{altaVehiculoBean.vehiculo.anio}" />
 
-				
+
 				<p:outputLabel value="Modelo: " indicateRequired="true" />
 				<p:inputText id="modelo" required="true"
 					value="#{altaVehiculoBean.vehiculo.modelo}" />
@@ -36,23 +36,24 @@
 				<p:inputText id="tipoDeuso" required="true"
 					value="#{altaVehiculoBean.vehiculo.tipoDeUso}" />
 
-                  	<p:outputLabel value="Persona: " indicateRequired="true" />
-			<p:selectOneMenu value="#{consultaPersonaBean.idSeleccionado}"
-				required="#{not empty param.combo}">
-				<f:selectItem itemLabel="Seleccione" />
-				<f:selectItems value="#{consultaPersonaBean.datosCombo}"
-					var="persona" itemLabel="#{persona.formatoCombo}"
-					itemValue="#{persona.id}" />
-				<p:ajax event="valueChange" update="panelDatosAltaVehiculo" />
-			</p:selectOneMenu>
-                  
+				<p:outputLabel value="Persona: " indicateRequired="true" />
+				<p:selectOneMenu value="#{consultaPersonaBean.idSeleccionado}"
+					required="#{not empty param.combo}">
+					<f:selectItem itemLabel="Seleccione" />
+					<f:selectItems value="#{consultaPersonaBean.datosCombo}"
+						var="persona" itemLabel="#{persona.formatoCombo}"
+						itemValue="#{persona.id}" />
+					<p:ajax event="valueChange" update="panelDatosAltaVehiculo" />
+				</p:selectOneMenu>
+
 
 			</h:panelGrid>
 
 			<p:toolbar>
 				<p:toolbarGroup align="right">
 					<p:commandButton value="Aceptar" update="panelDatosAltaVehiculo"
-						action="#{altaVehiculoBean.guardarVehiculo}" styleClass="classBlock" />
+						action="#{altaVehiculoBean.guardarVehiculo}"
+						styleClass="classBlock" />
 					<p:spacer width="20" />
 					<p:commandButton value="Volver" immediate="true"
 						styleClass="classBlock" action="#{altaVehiculoBean.volver}" />

@@ -6,11 +6,12 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 	<ui:define name="content">
-		<p:tabView id="consultas" dynamic="true" effect="fade" effectDuration="fast" style="height: 100%;">
+		<p:tabView id="consultas" dynamic="true" effect="fade"
+			effectDuration="fast" style="height: 100%;">
 			<p:tab title="Búsqueda por Combo" id="tabBusqueda">
 				<ui:include src="consultaPersona.xhtml" />
 			</p:tab>
-			<p:tab title="Búsqueda por Nombre" id="tabBusquedaNombre" >
+			<p:tab title="Búsqueda por Nombre" id="tabBusquedaNombre">
 				<ui:include src="consultaPersonaNombre.xhtml" />
 			</p:tab>
 		</p:tabView>

@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Fernando
@@ -31,6 +33,7 @@ public class Persona implements Serializable {
 	@Column(name = "persona_apellido", nullable = false, length = 80)
 	private String apellido;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name = "persona_fecha_nacimiento")
 	private Date fechaNacimiento;
 	

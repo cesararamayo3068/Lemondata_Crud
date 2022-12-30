@@ -31,28 +31,29 @@
 				rendered="#{eliminaPersonaBean.persona != null}">
 				<h:panelGrid columns="2" cellpadding="4"
 					style="margin-left: auto; margin-right: auto;">
-					<p:outputLabel value="Nombre: "  />
+					<p:outputLabel value="Nombre: " />
 					<p:inputText id="nombre"
-						value="#{eliminaPersonaBean.persona.nombre}" readonly="true"/>
+						value="#{eliminaPersonaBean.persona.nombre}" readonly="true" />
 
-					<p:outputLabel value="Apellido: "  />
-					<p:inputText id="apellido" 
+					<p:outputLabel value="Apellido: " />
+					<p:inputText id="apellido"
 						value="#{eliminaPersonaBean.persona.apellido}" readonly="true" />
-						
-					<p:outputLabel value="Fecha Nacimiento: "  />
-					<p:inputText id="fechaNacimiento" 
-						value="#{eliminaPersonaBean.persona.fechaNacimiento}" readonly="true" />
-					
-					<p:outputLabel value="Dni: "  />
-					<p:inputText id="dni" 
-						value="#{eliminaPersonaBean.persona.dni}" readonly="true" />
-						
-					<p:outputLabel value="Sexo: "  />
-					<p:inputText id="sexo" 
-						value="#{eliminaPersonaBean.persona.sexo}" readonly="true" />
-					
-					<p:outputLabel value="Domicilio: "  />
-					<p:inputText id="domicilio" 
+
+					<p:outputLabel value="Fecha Nacimiento: " />
+					<p:inputText id="fechaNacimiento"
+						value="#{eliminaPersonaBean.persona.fechaNacimiento}"
+						readonly="true" />
+
+					<p:outputLabel value="Dni: " />
+					<p:inputText id="dni" value="#{eliminaPersonaBean.persona.dni}"
+						readonly="true" />
+
+					<p:outputLabel value="Sexo: " />
+					<p:inputText id="sexo" value="#{eliminaPersonaBean.persona.sexo}"
+						readonly="true" />
+
+					<p:outputLabel value="Domicilio: " />
+					<p:inputText id="domicilio"
 						value="#{eliminaPersonaBean.persona.domicilio}" readonly="true" />
 				</h:panelGrid>
 			</p:panel>
@@ -68,7 +69,7 @@
 
 					</p:commandButton>
 
-                   <p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
 						responsive="true" width="350">
 						<p:commandButton value="No" type="button"
 							styleClass="ui-confirmdialog-no ui-button-flat" />

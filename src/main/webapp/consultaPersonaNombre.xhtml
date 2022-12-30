@@ -7,10 +7,44 @@
 	<p:panel id="panelConsultaNombre"
 		header="#{consultaPersonaBean.titulo}" style="text-align: center;">
 
+
+		<!-- <p:outputLabel value="Nombre: " indicateRequired="true" />
+	<p:inputText id="nombrePersona" value="#{persona.nombre}" required="true" />  -->
+
+		<h:form>
+			<div class="card">
+				<p:dataTable var="persona"
+					value="#{consultaPersonaBean.listarPersonas()}">
+					<p:column headerText="Nombre" filterBy="#{persona.nombre}"
+						filterMatchMode="contains">
+						<h:outputText value="#{persona.nombre}" />
+					</p:column>
+
+					<p:column headerText="Apellido">
+						<h:outputText value="#{persona.apellido}" />
+					</p:column>
+
+					<p:column headerText="Dni">
+						<h:outputText value="#{persona.dni}" />
+					</p:column>
+
+					<p:column headerText="Fecha Nacimiento">
+						<h:outputText value="#{persona.fechaNacimiento}" />
+					</p:column>
+
+					<p:column headerText="Sexo">
+						<h:outputText value="#{persona.sexo}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		</h:form>
 		<p:toolbar>
+
 			<p:toolbarGroup align="right">
+
 				<p:commandButton value="Consultar" styleClass="classBlock"
-					update="panelConsultaNombre"  action="#{consultaPersonaBean.consultarPersonaPorNombre}">
+					update="panelConsultaNombre"
+					action="#{consultaPersonaBean.consultarPersonaPorNombre}">
 				</p:commandButton>
 				<p:spacer width="20" />
 				<p:commandButton value="Volver" immediate="true"

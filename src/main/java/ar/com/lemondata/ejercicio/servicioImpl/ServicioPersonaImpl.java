@@ -2,6 +2,7 @@ package ar.com.lemondata.ejercicio.servicioImpl;
 
 import java.util.List;
 
+/*import org.hibernate.SessionFactory;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
@@ -22,15 +23,16 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	@Autowired
 	private PersonaRepository personaRepository;
 	
-	
-
+	/*
+	 * private SessionFactory sessionFactory;
+	 */
 	public Persona guardarPersona(Persona persona) {
 		return personaRepository.saveAndFlush(persona);
 	}
 
 	@Override
 	 public List<Persona> buscarPersonaXNombre(String nombre) {
-		//TODO Implementar metodo que devuelva todas las personas por el nombre pasado por parametro
+		
 	 return personaRepository.findByName(nombre);
 
 	}
@@ -48,10 +50,27 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	    personaRepository.deleteById(id);
 	}
 	
-	public Persona modificarPersona(Persona persona , Long id) {
-		Persona personaActual = personaRepository.findById(id).get();
-		 personaActual.setApellido(persona.getApellido());
-		return personaRepository.save(personaActual);
+	
+	
+	
+	
+	/*
+	 * public SessionFactory getSessionFactory() { return sessionFactory; }
+	 * 
+	 * public void setSessionFactory(SessionFactory sessionFactory) {
+	 * this.sessionFactory = sessionFactory; }
+	 */
+
+	public Persona modificarPersona(Persona persona , Long id  ) {
+		
+		  Persona personaActual = personaRepository.findById(id).get();
+		  
+		  personaActual.setApellido(persona.getApellido());
+		 
+		
+		 return personaRepository.save(personaActual); 
+		
+		 /* getSessionFactory().getCurrentSession().update(persona); */
 	}
 
 
