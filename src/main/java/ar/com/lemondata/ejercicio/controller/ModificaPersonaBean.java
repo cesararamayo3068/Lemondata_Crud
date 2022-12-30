@@ -76,11 +76,11 @@ public class ModificaPersonaBean extends GenericBean {
 		}
 	}
 
-	public void modificarPersona() {
+	public void modificarPersona(Persona persona , Long id) {
 		// TODO Guardar, refrescar combo, limpiar pantalla, mostrar mensaje de exito de
 		// modificacion
 		
-		//servicio.modificarPersona(Persona persona);
+		servicio.modificarPersona(persona, id);
 		mostrarMensaje("Se modifico la Persona: " + persona.getNombre() + " " + persona.getApellido() + " con el ID: "
 				+ persona.getId());
 		init();

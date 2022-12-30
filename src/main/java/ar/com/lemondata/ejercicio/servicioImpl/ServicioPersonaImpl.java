@@ -66,10 +66,10 @@ public class ServicioPersonaImpl implements ServicioPersona {
 		  Persona personaActual = personaRepository.findById(id).get();
 		  
 		  personaActual.setApellido(persona.getApellido());
-		 
-		
-		 return personaRepository.save(personaActual); 
-		
+
+		System.out.println(id);
+		 return personaRepository.save(personaActual);
+
 		 /* getSessionFactory().getCurrentSession().update(persona); */
 	}
 

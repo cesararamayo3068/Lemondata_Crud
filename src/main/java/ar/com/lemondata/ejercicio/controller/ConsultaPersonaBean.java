@@ -80,13 +80,13 @@ public class ConsultaPersonaBean extends GenericBean {
 		}
 	}
 	
-	public List<Persona> consultarPersonaPorNombre() {
-		List<Persona> personas = servicio.buscarPersonaXNombre("Lionel");
+	public List<Persona> consultarPersonaPorNombre(String nombre) {
+		List<Persona> personas = servicio.buscarPersonaXNombre(nombre);
 		for (Persona p : personas) {
 			System.out.println(p.getNombre());
 		}
 
-		return servicio.buscarPersonaXNombre("nombre");
+		return personas;
 	 }
    
 	public List<Persona> listarPersonas(){

@@ -8,8 +8,8 @@
 		header="#{consultaPersonaBean.titulo}" style="text-align: center;">
 
 
-		<!-- <p:outputLabel value="Nombre: " indicateRequired="true" />
-	<p:inputText id="nombrePersona" value="#{persona.nombre}" required="true" />  -->
+		<p:outputLabel value="Nombre: " indicateRequired="true" />
+	<p:inputText  var="personaInput" id="nombrePersona" value="#{personaInput}" required="true" />
 
 		<h:form>
 			<div class="card">
@@ -44,7 +44,7 @@
 
 				<p:commandButton value="Consultar" styleClass="classBlock"
 					update="panelConsultaNombre"
-					action="#{consultaPersonaBean.consultarPersonaPorNombre}">
+					action="#{consultaPersonaBean.consultarPersonaPorNombre(personaInput)}">
 				</p:commandButton>
 				<p:spacer width="20" />
 				<p:commandButton value="Volver" immediate="true"

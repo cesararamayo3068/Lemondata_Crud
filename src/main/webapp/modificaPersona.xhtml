@@ -46,7 +46,7 @@
 					<p:commandButton value="Modificar" styleClass="classBlock"
 						update="panelModificacion"
 						disabled="#{modificaPersonaBean.persona == null}"
-						action="#{modificaPersonaBean.modificarPersona}">
+						action="#{modificaPersonaBean.modificarPersona(modificaPersonaBean.persona,modificaPersonaBean.persona.id)}">
 						<f:param name="datos" value="true" />
 					</p:commandButton>
 					<p:spacer width="20" />
