@@ -14,7 +14,9 @@
 		<h:form>
 			<div class="card">
 				<p:dataTable var="persona"
-					value="#{consultaPersonaBean.listarPersonas()}">
+					value="#{consultaPersonaBean.consultarPersonaPorNombre(personaInput)}">
+
+
 					<p:column headerText="Nombre" filterBy="#{persona.nombre}"
 						filterMatchMode="contains">
 						<h:outputText value="#{persona.nombre}" />
@@ -34,6 +36,9 @@
 
 					<p:column headerText="Sexo">
 						<h:outputText value="#{persona.sexo}" />
+					</p:column>
+					<p:column headerText="Domicilio">
+						<h:outputText value="#{persona.domicilio}" />
 					</p:column>
 				</p:dataTable>
 			</div>
