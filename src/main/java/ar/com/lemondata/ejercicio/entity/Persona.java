@@ -30,16 +30,16 @@ public class Persona implements Serializable {
 	private String apellido;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "persona_fecha_nacimiento")
+	@Column(name = "persona_fecha_nacimiento",nullable = false, length = 20)
 	private Date fechaNacimiento;
 	
-	@Column(name = "persona_dni")
+	@Column(name = "persona_dni",nullable = false, length = 20)
 	private Integer dni;
 	
-	@Column(name = "persona_sexo")
+	@Column(name = "persona_sexo",nullable = false, length = 12)
 	private String sexo;
 	
-	@Column(name = "persona_domicilio")
+	@Column(name = "persona_domicilio",nullable = false, length = 50)
 	private String domicilio;
 
 	@OneToMany
