@@ -39,6 +39,26 @@
 					<p:outputLabel value="Apellido: " indicateRequired="true" />
 					<p:inputText id="apellido" required="#{not empty param.datos}"
 						value="#{modificaPersonaBean.persona.apellido}" />
+
+					<p:outputLabel value="Fecha Nacimiento: " indicateRequired="true" />
+					<p:datePicker value="#{modificaPersonaBean.persona.fechaNacimiento}"
+								  pattern="dd.MM.yyyy" />
+
+					<p:outputLabel value="Dni: " indicateRequired="true" />
+					<p:inputNumber id="dni" required="true"
+								   value="#{modificaPersonaBean.persona.dni}" />
+
+					<p:outputLabel value="Sexo: " indicateRequired="true" />
+					<p:selectOneRadio id="console"
+									  value="#{modificaPersonaBean.persona.sexo}">
+						<f:selectItem itemLabel="Masculino" itemValue="masculino" />
+						<f:selectItem itemLabel="Femenino" itemValue="femenino" />
+
+					</p:selectOneRadio>
+
+					<p:outputLabel value="Domicilio: " indicateRequired="true" />
+					<p:inputText id="domicilio" required="true"
+								 value="#{modificaPersonaBean.persona.domicilio}" />
 				</h:panelGrid>
 			</p:panel>
 			<p:toolbar>

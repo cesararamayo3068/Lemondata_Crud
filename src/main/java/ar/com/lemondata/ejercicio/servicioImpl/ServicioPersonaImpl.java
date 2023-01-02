@@ -2,7 +2,6 @@ package ar.com.lemondata.ejercicio.servicioImpl;
 
 import java.util.List;
 
-/*import org.hibernate.SessionFactory;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
@@ -22,10 +21,7 @@ public class ServicioPersonaImpl implements ServicioPersona {
 
 	@Autowired
 	private PersonaRepository personaRepository;
-	
-	/*
-	 * private SessionFactory sessionFactory;
-	 */
+
 	public Persona guardarPersona(Persona persona) {
 		return personaRepository.saveAndFlush(persona);
 	}
@@ -49,28 +45,20 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	public void eliminarPersona(Long id) {
 	    personaRepository.deleteById(id);
 	}
-	
-	
-	
-	
-	
-	/*
-	 * public SessionFactory getSessionFactory() { return sessionFactory; }
-	 * 
-	 * public void setSessionFactory(SessionFactory sessionFactory) {
-	 * this.sessionFactory = sessionFactory; }
-	 */
+
 
 	public Persona modificarPersona(Persona persona , Long id  ) {
 		
 		  Persona personaActual = personaRepository.findById(id).get();
-		  
+
+		  personaActual.setNombre(persona.getNombre());
 		  personaActual.setApellido(persona.getApellido());
+          personaActual.setFechaNacimiento(persona.getFechaNacimiento());
+          personaActual.setDni(persona.getDni());
+          personaActual.setSexo(persona.getSexo());
+          personaActual.setDomicilio(persona.getDomicilio());
 
-		System.out.println(id);
 		 return personaRepository.save(personaActual);
-
-		 /* getSessionFactory().getCurrentSession().update(persona); */
 	}
 
 
