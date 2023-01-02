@@ -49,6 +49,11 @@ public class ServiceVehiculoImpl implements ServiceVehiculo {
 	public Vehiculo modificarVehiculo(Vehiculo vehiculo , Long id) {
 		Vehiculo vehiculoActual = vehiculoRepository.findById(id).get();
 		vehiculoActual.setMarca(vehiculo.getMarca());
+		vehiculoActual.setPatente(vehiculo.getPatente());
+		vehiculoActual.setAnio(vehiculo.getAnio());
+		vehiculoActual.setModelo(vehiculo.getModelo());
+		vehiculoActual.setColor(vehiculo.getColor());
+		vehiculoActual.setTipoDeUso(vehiculo.getTipoDeUso());
 		return vehiculoRepository.save(vehiculoActual);
 	}
 
