@@ -42,8 +42,12 @@ public class Persona implements Serializable {
 	@Column(name = "persona_domicilio",nullable = false, length = 50)
 	private String domicilio;
 
-	@OneToMany
-	private List<Vehiculo> vehiculoList;
+
+
+	@OneToMany(mappedBy = "persona")
+	private List<Vehiculo> vehiculos;
+
+
 	
 	public Persona() {
 		super();
@@ -104,7 +108,13 @@ public class Persona implements Serializable {
 	public void setDomicilio(String domicilio) {
 		this.domicilio = domicilio;
 	}
-	
-	
+
+	public List<Vehiculo> getVehiculos() {
+		return vehiculos;
+	}
+
+	public void setVehiculos(List<Vehiculo> vehiculos) {
+		this.vehiculos = vehiculos;
+	}
 
 }

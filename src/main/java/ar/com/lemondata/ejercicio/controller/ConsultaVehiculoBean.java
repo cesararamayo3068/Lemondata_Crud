@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
+import ar.com.lemondata.ejercicio.entity.DatosPersona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -28,15 +29,19 @@ public class ConsultaVehiculoBean extends GenericBean {
 	private String titulo;
 
 	private Long idSeleccionado;
-	private List<DatosVehiculo> datosCombo;
+	//private List<DatosPersona> datosCombo;
 	private Vehiculo vehiculo;
 
 	@Autowired
 	private ServiceVehiculoImpl servicio;
 
+	@Autowired
+	private ServicioPersonaImpl servicioPersona;
+
+
 	@PostConstruct
 	private void init() {
-		setDatosCombo(servicio.obtenerDatosComboVehiculo());
+		//setDatosCombo(servicioPersona.obtenerDatosComboPersona());
 		setIdSeleccionado(null);
 		setVehiculo(null);
 	}
@@ -57,13 +62,13 @@ public class ConsultaVehiculoBean extends GenericBean {
 		this.idSeleccionado = idSeleccionado;
 	}
 
-	public List<DatosVehiculo> getDatosCombo() {
-		return datosCombo;
-	}
+//	public List<DatosPersona> getDatosCombo() {
+//		return datosCombo;
+//	}
 
-	public void setDatosCombo(List<DatosVehiculo> datosCombo) {
-		this.datosCombo = datosCombo;
-	}
+	//public void setDatosCombo(List<DatosPersona> datosCombo) {
+	//	this.datosCombo = datosCombo;
+	//}
 
 	public Vehiculo getVehiculo() {
 		return vehiculo;

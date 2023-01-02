@@ -2,12 +2,7 @@ package ar.com.lemondata.ejercicio.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author César
@@ -16,34 +11,40 @@ import javax.persistence.Table;
 @Entity(name = "VEHICULOS")
 @Table(name = "VEHICULOS")
 public class Vehiculo implements Serializable {
-	
+
 	private static final long serialVersionUID = 5836967339724076670L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "vehiculo_id", unique = true, nullable = false)
 	private Long id;
-	
+
 	@Column(name = "vehiculo_patente", length = 8)
 	private String patente;
-	
+
 	@Column(name = "vehiculo_anio", length = 4)
 	private Integer anio;
-	
+
 	@Column(name = "vehiculo_marca", length = 16)
 	private String marca;
-	
+
 	@Column(name = "vehiculo_modelo", length = 16)
 	private String modelo;
-	
+
 	@Column(name = "vehiculo_color", length = 16)
 	private String color;
-	
+
 	@Column(name = "vehiculo_tipo_uso", length = 30)
 	private String tipoDeUso;
-	
-	@Column(name = "vehiculo_propietario", length = 30)
-	private Persona propietario;
+
+
+
+	//@Column(name = "vehiculo_propietario", length = 30)
+	@ManyToOne
+	private Persona persona;
+
+	public Vehiculo() {
+	}
 
 	public Long getId() {
 		return id;
@@ -101,13 +102,14 @@ public class Vehiculo implements Serializable {
 		this.tipoDeUso = tipoDeUso;
 	}
 
-	public Persona getPropietario() {
-		return propietario;
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setPropietario(Persona propietario) {
-		this.propietario = propietario;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
+
 	
 	
 	

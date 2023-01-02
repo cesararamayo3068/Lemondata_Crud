@@ -23,6 +23,6 @@ public interface VehiculoRepository extends JpaRepository<Vehiculo, Long> {
 
 	public List<DatosVehiculo> findAllProjectedBy();
 
-	/* public Persona findByName(String nombre); */
+
 
 }

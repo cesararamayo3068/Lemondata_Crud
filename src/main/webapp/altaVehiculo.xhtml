@@ -36,15 +36,16 @@
 				<p:inputText id="tipoDeuso" required="true"
 					value="#{altaVehiculoBean.vehiculo.tipoDeUso}" />
 
-				<p:outputLabel value="Propietario: " indicateRequired="true" />
+				<!--<p:outputLabel value="Propietario: " indicateRequired="true" />
 				<p:selectOneMenu value="#{consultaPersonaBean.idSeleccionado}"
-					required="#{not empty param.combo}">
-					<f:selectItem itemLabel="Seleccione" />
+								 required="#{not empty param.combo}">
 					<f:selectItems value="#{consultaPersonaBean.datosCombo}"
-						var="persona" itemLabel="#{persona.formatoCombo}"
-						itemValue="#{persona.id}" />
+								   var="persona" itemLabel="#{persona.formatoCombo}"
+								   itemValue="#{persona.id}" />
 					<p:ajax event="valueChange" update="panelDatosAltaVehiculo" />
-				</p:selectOneMenu>
+				<f:selectItem itemLabel="Seleccione" />
+				</p:selectOneMenu>-->
+
 
 
 			</h:panelGrid>

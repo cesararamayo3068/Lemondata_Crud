@@ -1,3 +1,4 @@
 INSERT INTO personas (persona_nombre, persona_apellido,persona_fecha_nacimiento,persona_dni,persona_sexo,persona_domicilio) VALUES ('Lionel Andres', 'Messi','2022-12-18',3333333,'Masculino','Los Alerces 34');
 INSERT INTO personas (persona_nombre, persona_apellido,persona_fecha_nacimiento,persona_dni,persona_sexo,persona_domicilio) VALUES ('Lionel Sebastián', 'Scaloni','2018-12-09',77777777,'Masculino','Final del Mundo 2022');
 INSERT INTO personas (persona_nombre, persona_apellido,persona_fecha_nacimiento,persona_dni,persona_sexo,persona_domicilio) VALUES ('Pedro', 'Sanchez','2014-09-15' ,88888888,'Masculino','Por fin se dio 2022');
+INSERT INTO vehiculos (vehiculo_patente,vehiculo_anio,vehiculo_marca,vehiculo_modelo,vehiculo_color,vehiculo_tipo_uso) values ('AA567RD',2020,'CHEVROLET','CORSA','NEGRO','PASEO');

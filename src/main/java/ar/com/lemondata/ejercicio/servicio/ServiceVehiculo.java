@@ -24,6 +24,6 @@ public interface ServiceVehiculo {
 	
 	public Vehiculo modificarVehiculo(Vehiculo vehiculo ,Long id);
 
-	//void modificarPersona(Persona persona, Long id);
+
 
 }
