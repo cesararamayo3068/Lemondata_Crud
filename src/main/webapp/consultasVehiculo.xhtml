@@ -13,38 +13,38 @@
 				required="#{not empty param.combo}">
 				<f:selectItem itemLabel="Seleccione" />
 				<f:selectItems value="#{consultaVehiculoBean.datosCombo}"
-					var="persona" itemLabel="#{persona.formatoCombo}"
-					itemValue="#{persona.id}" />
+					var="vehiculo" itemLabel="#{vehiculo.formatoCombo}"
+					itemValue="#{vehiculo.id}" />
 				<p:ajax event="valueChange" update="panelConsulta" />
 			</p:selectOneMenu>
 		</h:panelGrid>
-		<p:panel id="panelDatosPersona"
-			rendered="#{consultaPersonaBean.persona != null}">
+		<p:panel id="panelDatosVehiculo"
+			rendered="#{consultaVehiculoBean.vehiculo != null}">
 			<h:panelGrid columns="2" cellpadding="4"
 				style="margin-left: auto; margin-right: auto;">
-				<p:outputLabel value="Nombre: " />
-				<p:inputText id="nombreVehiculo" readonly="true"
-					value="#{consultaPersonaBean.persona.nombre}" />
+				<p:outputLabel value="Marca: " />
+				<p:inputText id="marca" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.marca}" />
 
-				<p:outputLabel value="Apellido: " />
-				<p:inputText id="apellido" readonly="true"
-					value="#{consultaPersonaBean.persona.apellido}" />
+				<p:outputLabel value="Patente: " />
+				<p:inputText id="patente" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.patente}" />
 
-				<p:outputLabel value="Fecha Nacimiento: " />
-				<p:inputText id="fechaNacimiento" readonly="true"
-					value="#{consultaPersonaBean.persona.fechaNacimiento}" />
+				<p:outputLabel value="Año: " />
+				<p:inputText id="anio" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.anio}" />
 
-				<p:outputLabel value="Dni: " />
-				<p:inputText id="dni" readonly="true"
-					value="#{consultaPersonaBean.persona.dni}" />
+				<p:outputLabel value="Modelo: " />
+				<p:inputText id="modelo" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.modelo}" />
 
-				<p:outputLabel value="Sexo: " />
-				<p:inputText id="sexo" readonly="true"
-					value="#{consultaPersonaBean.persona.sexo}" />
+				<p:outputLabel value="Color: " />
+				<p:inputText id="colo" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.color}" />
 
-				<p:outputLabel value="Domicilio: " />
-				<p:inputText id="domicilio" readonly="true"
-					value="#{consultaPersonaBean.persona.domicilio}" />
+				<p:outputLabel value="Tipo de Uso: " />
+				<p:inputText id="tipoDeUso" readonly="true"
+					value="#{consultaVehiculoBean.vehiculo.tipoDeUso}" />
 
 			</h:panelGrid>
 		</p:panel>
@@ -52,13 +52,13 @@
 		<p:toolbar>
 			<p:toolbarGroup align="right">
 				<p:commandButton value="Consultar" styleClass="classBlock"
-					action="#{consultaPersonaBean.consultarPersona}"
+					action="#{consultaVehiculoBean.consultarVehiculo}"
 					update="panelConsulta">
 					<f:param name="combo" value="true" />
 				</p:commandButton>
 				<p:spacer width="20" />
 				<p:commandButton value="Volver" immediate="true"
-					styleClass="classBlock" action="#{consultaPersonaBean.volver}" />
+					styleClass="classBlock" action="#{consultaVehiculoBean.volver}" />
 			</p:toolbarGroup>
 		</p:toolbar>
 	</p:panel>
