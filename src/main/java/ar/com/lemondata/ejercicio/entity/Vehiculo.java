@@ -19,22 +19,22 @@ public class Vehiculo implements Serializable {
 	@Column(name = "vehiculo_id", unique = true, nullable = false)
 	private Long id;
 
-	@Column(name = "vehiculo_patente", length = 8)
+	@Column(name = "vehiculo_patente",nullable = false, length = 8)
 	private String patente;
 
-	@Column(name = "vehiculo_anio", length = 4)
+	@Column(name = "vehiculo_anio",nullable = false, length = 4)
 	private Integer anio;
 
-	@Column(name = "vehiculo_marca", length = 16)
+	@Column(name = "vehiculo_marca",nullable = false, length = 16)
 	private String marca;
 
-	@Column(name = "vehiculo_modelo", length = 16)
+	@Column(name = "vehiculo_modelo",nullable = false, length = 16)
 	private String modelo;
 
-	@Column(name = "vehiculo_color", length = 16)
+	@Column(name = "vehiculo_color",nullable = false, length = 16)
 	private String color;
 
-	@Column(name = "vehiculo_tipo_uso", length = 30)
+	@Column(name = "vehiculo_tipo_uso",nullable = false, length = 30)
 	private String tipoDeUso;
 
 

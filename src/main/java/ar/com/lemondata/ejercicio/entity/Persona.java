@@ -4,9 +4,12 @@ package ar.com.lemondata.ejercicio.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import ar.com.lemondata.ejercicio.entity.Vehiculo;
+
 
 import javax.persistence.*;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Fernando
@@ -23,22 +26,28 @@ public class Persona implements Serializable {
 	@Column(name = "persona_id", unique = true, nullable = false)
 	private Long id;
 
+	@NotNull(message = "Debe ingresar el nombre")
 	@Column(name = "persona_nombre", nullable = false, length = 80)
 	private String nombre;
 
+	@NotEmpty
 	@Column(name = "persona_apellido", nullable = false, length = 80)
 	private String apellido;
-	
+
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	@Column(name = "persona_fecha_nacimiento",nullable = false, length = 20)
 	private Date fechaNacimiento;
-	
+
+	@NotNull
 	@Column(name = "persona_dni",nullable = false, length = 20)
 	private Integer dni;
-	
+
+	@NotEmpty
 	@Column(name = "persona_sexo",nullable = false, length = 12)
 	private String sexo;
-	
+
+	@NotEmpty
 	@Column(name = "persona_domicilio",nullable = false, length = 50)
 	private String domicilio;
 

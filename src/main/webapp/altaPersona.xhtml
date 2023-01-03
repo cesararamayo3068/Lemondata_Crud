@@ -8,36 +8,42 @@
 
 		<p:panel id="panelDatosAlta" header="#{altaPersonaBean.titulo}"
 			style="text-align: center;">
-			<h:panelGrid columns="2" cellpadding="4"
+			<h:panelGrid columns="3" cellpadding="4"
 				style="margin-left: auto; margin-right: auto;">
 
 				<p:outputLabel value="Nombre: " indicateRequired="true" />
 				<p:inputText id="nombre" value="#{altaPersonaBean.persona.nombre}"
 					required="true" />
+				<p:message for="nombre" style="color:red;"/>
 
 				<p:outputLabel value="Apellido: " indicateRequired="true" />
-				<p:inputText id="apellido" required="true"
+				<p:inputText id="apellido"
 					value="#{altaPersonaBean.persona.apellido}" />
+				<p:message for="apellido" style="color:red;"/>
 
 				<p:outputLabel value="Fecha Nacimiento: " indicateRequired="true" />
-				<p:datePicker value="#{altaPersonaBean.persona.fechaNacimiento}"
+				<p:datePicker id="fechaNacimiento" value="#{altaPersonaBean.persona.fechaNacimiento}"
 					pattern="dd.MM.yyyy" />
+				<p:message for="fechaNacimiento" style="color:red;"/>
 
 				<p:outputLabel value="Dni: " indicateRequired="true" />
-				<p:inputNumber id="dni" required="true"
+				<p:inputNumber id="dni"
 					value="#{altaPersonaBean.persona.dni}" />
+				<p:message for="dni" style="color:red;"/>
 
 				<p:outputLabel value="Sexo: " indicateRequired="true" />
-				<p:selectOneRadio id="console"
+				<p:selectOneRadio id="sexo"
 					value="#{altaPersonaBean.persona.sexo}">
 					<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
 					<f:selectItem itemLabel="Femenino" itemValue="Femenino" />
 
 				</p:selectOneRadio>
+				<p:message for="sexo" style="color:red;"/>
 
 				<p:outputLabel value="Domicilio: " indicateRequired="true" />
-				<p:inputText id="domicilio" required="true"
+				<p:inputText id="domicilio"
 					value="#{altaPersonaBean.persona.domicilio}" />
+				<p:message for="domicilio" style="color:red;"/>
 			</h:panelGrid>
 
 			<p:toolbar>
