@@ -13,7 +13,8 @@
 		<h:form>
 			<div class="card">
 				<p:dataTable var="vehiculo"
-							 value="#{consultaVehiculoBean.consultarVehiculoPorNombre(vehiculoInput)}">
+							 value="#{consultaVehiculoBean.consultarVehiculoPorNombre(vehiculoInput)}"
+				  paginator="true" rows="3" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDrop}">
 
 
 					<p:column headerText="Marca" filterBy="#{vehiculo.marca}"
