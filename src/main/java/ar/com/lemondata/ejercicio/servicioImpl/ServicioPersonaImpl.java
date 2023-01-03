@@ -61,11 +61,10 @@ public class ServicioPersonaImpl implements ServicioPersona {
 		 return personaRepository.save(personaActual);
 	}
 
+	@Override
+	public List<Persona> findAll() {
+		return personaRepository.findAll();
+	}
 
-
-	
-	 
-	
-	
 
 }

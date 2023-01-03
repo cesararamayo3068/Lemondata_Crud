@@ -26,12 +26,9 @@ public class ServiceVehiculoImpl implements ServiceVehiculo {
 	@Autowired
 	private VehiculoRepository vehiculoRepository;
 	
-	
-
 	public Vehiculo guardarVehiculo(Vehiculo vehiculo) {
 		return vehiculoRepository.saveAndFlush(vehiculo);
 	}
-
 
 	public Vehiculo buscarVehiculoPorId(Long id) {
 		return vehiculoRepository.findById(id).get();

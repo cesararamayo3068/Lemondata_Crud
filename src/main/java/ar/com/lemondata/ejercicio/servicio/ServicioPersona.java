@@ -23,6 +23,8 @@ public interface ServicioPersona {
 	
 	public  Persona modificarPersona(Persona persona ,Long id );
 
+	public List<Persona> findAll();
+
 	
 
 }
