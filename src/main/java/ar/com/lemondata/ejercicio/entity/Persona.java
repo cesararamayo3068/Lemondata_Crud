@@ -53,8 +53,8 @@ public class Persona implements Serializable {
 
 
 
-	@OneToMany(mappedBy = "persona")
-	private List<Vehiculo> vehiculos;
+	/*@OneToMany(mappedBy = "persona")
+	private List<Vehiculo> vehiculos;*/
 
 
 	
@@ -118,12 +118,12 @@ public class Persona implements Serializable {
 		this.domicilio = domicilio;
 	}
 
-	public List<Vehiculo> getVehiculos() {
+	/*public List<Vehiculo> getVehiculos() {
 		return vehiculos;
 	}
 
 	public void setVehiculos(List<Vehiculo> vehiculos) {
 		this.vehiculos = vehiculos;
-	}
+	}*/
 
 }
