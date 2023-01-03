@@ -2,7 +2,6 @@ package ar.com.lemondata.ejercicio.controller;
 
 
 import ar.com.lemondata.ejercicio.entity.DatosVehiculo;
-import ar.com.lemondata.ejercicio.entity.Persona;
 import ar.com.lemondata.ejercicio.entity.Vehiculo;
 import ar.com.lemondata.ejercicio.servicioImpl.ServiceVehiculoImpl;
 

@@ -14,7 +14,7 @@ public interface ServiceVehiculo {
 
 	public Vehiculo guardarVehiculo(Vehiculo vehiculo);
 
-	public Vehiculo buscarVehiculoPorNombre(String nombre);
+	public List<Vehiculo> buscarVehiculoPorNombre(String marca);
 
 	public Vehiculo buscarVehiculoPorId(Long id);
 

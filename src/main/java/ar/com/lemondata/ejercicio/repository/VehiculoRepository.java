@@ -3,7 +3,10 @@ package ar.com.lemondata.ejercicio.repository;
 import java.util.List;
 import java.util.Optional;
 
+import ar.com.lemondata.ejercicio.entity.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import ar.com.lemondata.ejercicio.entity.DatosVehiculo;
@@ -23,6 +26,8 @@ public interface VehiculoRepository extends JpaRepository<Vehiculo, Long> {
 
 	public List<DatosVehiculo> findAllProjectedBy();
 
+	@Query("select v from VEHICULOS v WHERE  v.marca LIKE %:marca%")
+	public List<Vehiculo> findByName(@Param("marca")  String marca);
 
 
 }

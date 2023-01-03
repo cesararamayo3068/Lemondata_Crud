@@ -5,17 +5,52 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<p:panel id="panelConsultaNombre"
-		header="#{consultaPersonaBean.titulo}" style="text-align: center;">
+		header="#{consultaVehiculoBean.titulo}" style="text-align: center;">
 
+		<p:outputLabel value="Marca: " indicateRequired="true" />
+		<p:inputText  var="vehiculoInput" id="marcaVehiculo" value="#{vehiculoInput}" required="true" />
+
+		<h:form>
+			<div class="card">
+				<p:dataTable var="vehiculo"
+							 value="#{consultaVehiculoBean.consultarVehiculoPorNombre(vehiculoInput)}">
+
+
+					<p:column headerText="Marca" filterBy="#{vehiculo.marca}"
+							  filterMatchMode="contains">
+						<h:outputText value="#{vehiculo.marca}" />
+					</p:column>
+
+					<p:column headerText="Patente">
+						<h:outputText value="#{vehiculo.patente}" />
+					</p:column>
+
+					<p:column headerText="Año">
+						<h:outputText value="#{vehiculo.anio}" />
+					</p:column>
+
+					<p:column headerText="Modelo">
+						<h:outputText value="#{vehiculo.modelo}" />
+					</p:column>
+
+					<p:column headerText="Color">
+						<h:outputText value="#{vehiculo.color}" />
+					</p:column>
+					<p:column headerText="Tipo de Uso">
+						<h:outputText value="#{vehiculo.tipoDeUso}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		</h:form>
 		<p:toolbar>
 			<p:toolbarGroup align="right">
 				<p:commandButton value="Consultar" styleClass="classBlock"
 					update="panelConsultaNombre"
-					action="#{consultaVehiculoBean.consultarPersonaPorNombre}">
+					action="#{consultaVehiculoBean.consultarVehiculoPorNombre(vehiculoInput)}">
 				</p:commandButton>
 				<p:spacer width="20" />
 				<p:commandButton value="Volver" immediate="true"
-					styleClass="classBlock" action="#{consultaPersonaBean.volver}" />
+					styleClass="classBlock" action="#{consultaVehiculoBean.volver}" />
 			</p:toolbarGroup>
 		</p:toolbar>
 	</p:panel>

@@ -5,15 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-
-import ar.com.lemondata.ejercicio.entity.DatosPersona;
 import ar.com.lemondata.ejercicio.entity.DatosVehiculo;
-import ar.com.lemondata.ejercicio.entity.Persona;
 import ar.com.lemondata.ejercicio.entity.Vehiculo;
-import ar.com.lemondata.ejercicio.repository.PersonaRepository;
 import ar.com.lemondata.ejercicio.repository.VehiculoRepository;
 import ar.com.lemondata.ejercicio.servicio.ServiceVehiculo;
-import ar.com.lemondata.ejercicio.servicio.ServicioPersona;
+
 
 /**
  * @author Cesar
@@ -56,9 +52,9 @@ public class ServiceVehiculoImpl implements ServiceVehiculo {
 
 
 	@Override
-	public Vehiculo buscarVehiculoPorNombre(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Vehiculo> buscarVehiculoPorNombre(String marca) {
+		return vehiculoRepository.findByName(marca);
+
 	}
 
 

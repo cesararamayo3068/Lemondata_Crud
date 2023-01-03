@@ -29,7 +29,7 @@ public class ServicioPersonaImpl implements ServicioPersona {
 	@Override
 	 public List<Persona> buscarPersonaXNombre(String nombre) {
 		
-	 return personaRepository.findByName(nombre);
+	 	return personaRepository.findByName(nombre);
 
 	}
 
